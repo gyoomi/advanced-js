@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1.什么是闭包
+    // 闭：闭合，关闭，封闭
+    // 包：包裹，包起来
+
+    // 一个封闭的对外不公开的，包裹的空间或结构
+
+    // 2.js中的闭包
+    // js中的闭包就是函数
+
+    // 3.闭包的原理就是作用域的访问原则。
+    // 上级作用域无法访问下级作用域中变量
+
+    // 4.闭包要解决的问题？
+    //   1.闭包内的数据外界无法访问
+    //   2.要解决的就是间接访问该数据
+
+    function foo() {
+        var num = 123;
+        return num;
+    }
+
+    var x = foo();
+    var y = foo();
+    // console.log(x === y);
+
+    // 用来说明每次调用函数，返回的对象都是新的，都是不一样的
+    function bar() {
+        var obj = {
+            name:'tom',
+            age:22
+        }
+        return obj;
+    }
+
+    var obj1 = bar();
+    var obj2 = bar();
+
+    // console.log(obj1 == obj2);
+
+    // 使用return将函数内部的数据返回，这个数据只能被使用一次
+
+
+    // 导引
+    // 1.函数内部的函数可以访问该函数的变量
+    // 2.但是我们需要在函数外部访问该函数的变量
+
+    function f456() {
+        var n = 123;
+        return function(a) {
+            if (a !== undefined) {
+                n = a;
+                return n;
+            } else {
+                return n;
+            }
+        };
+    }
+
+    var nnn = f456();
+    var xn = nnn();
+    console.log(xn);
+    console.log(nnn(999));
+
+
+    // 闭包的基本形式
+    // 在外部函数foo内创建函数inner，在这个内部函数inner，我们可以操作foo中的数据
+    // 在外部函数返回值，设置为内部函数
+    // 在外部调用外部函数foo,就可以接收到返回值（inner）
+    // 使用这个内部函数，就可以在外部对外部函数的变量进行修改
+
+</script>
+</html>

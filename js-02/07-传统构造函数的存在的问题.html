@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 如果在构造函数中定义函数，那么每次创建对象，都会重新创建该函数
+    // 但是函数内部代码完全相同，就造成了资源浪费
+    // 为了处理这个问题，我们要让所有的对象共用一个方法
+    // 在构造函数外部定义好该函数，将该函数赋值给构造函数内的方法
+
+    // 使用这种方式写好的方法中的this指向的就是调用该方法的对象
+    // this 谁调用就是谁
+
+    function stuWay(){
+        console.log(this.name + "好好学习，天天向上！")
+    }
+
+    function Student(name){
+        this.name = name;
+        this.stuWay = stuWay;
+        // 如果这里的方法很多，则会造成很多全局的函数，会有问题
+    }
+
+    // 如果构造函数中没有参数，可以使用new Student;
+    var stu = new Student("三毛");
+    stu.stuWay();
+    var stu2 = new Student("三毛222");
+    stu2.stuWay();
+
+    // 这种方式存在问题
+    // 1.全局变量增多，造成污染
+    // 2.代码结构混乱，不易维护
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 如何创建对象
+    // 1.对象字面量
+    var obj = {
+        name:"给我一首歌的时间",
+        singer:"Jay Zhou"
+    }
+
+    // 2.使用内置构造函数
+    var obj1 = new Object();
+    obj1.name = "张学友";
+    obj1.singSong = function(){
+        console.log("张学友唱歌了...")
+    }
+
+    // 3.封装简单工厂（不推荐使用）
+    function createSong(songName,singerName){
+        var o =new Object();
+        o.name = songName;
+        o.singer = singerName;
+
+        o.sing = function () {
+            console.log("让我来唱首歌");
+        }
+        return o;//{name:"",singer:"",sing:function...}
+    }
+
+    var obj2 = createSong("一言难尽","张宇");
+
+    console.log(obj);
+    console.log(obj1);
+    console.log(obj2);
+</script>
+</html>

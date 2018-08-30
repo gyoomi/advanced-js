@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 求100以内，奇数的和
+    var sum = 0;
+    for (var i = 0; i <= 1000; i++){
+        if (i > 100){
+            break;
+        }
+        if (i % 2 == 0){
+            continue;
+        } else {
+          sum += i;
+        }
+    }
+    console.log(sum);
+
+    //continue是用来干什么的？
+    //跳出本次循环 继续下次循环，continue下面的代码不再执行
+
+    //break 是用来干什么的？
+    //终止循环 break后面的代码执行吗？ 不执行
+</script>
+</html>

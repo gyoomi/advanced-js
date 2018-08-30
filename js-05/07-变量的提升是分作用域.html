@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // console.log(a);
+    // var a = 123;
+
+    /*
+    var num = 456;
+    function test() {
+        console.log(num);
+        var num = 10;
+    }
+    */
+
+    // test(); undefined
+
+    var num = 456;
+    function f1() {
+        console.log(num);
+        var num = 10;
+    }
+    f1(); // undefined
+    console.log(num); //456
+
+    // 说明变量的提升是分作用域的
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>this is first p element!!!</p>
+    <p>this is second p element!!!</p>
+    <p>this is third p element!!!</p>
+</body>
+<script>
+    var divs = document.getElementsByTagName("div");
+    for (var i = 0; i < divs.length; i++){
+        divs[i].style.border = "1px solid black";
+    }
+
+    var ps = document.getElementsByTagName("p");
+    for (var j = 0; j < ps.length; j++) {
+        ps[j].style.border = "1px solid red";
+    }
+
+    // 编写代码的时候的原则：DRY
+    // Don't repeat yourself
+</script>
+</html>

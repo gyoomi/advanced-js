@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    Array.prototype.sayHi = function(){
+        console.log("Hi Array");
+    }
+
+    function MyArr() {
+        this.name = "jack";
+        this.sayHello = function(){
+            console.log("我的my arr方法");
+        }
+    }
+
+    var arr = new Array();
+    MyArr.prototype = arr;
+    MyArr.prototype.datererw = function(){}
+    var my = new MyArr();
+    my.push(1);
+    my.push(12);
+    // console.log(my);
+    // my.sayHi();
+
+
+    function TomArr(){
+        this.name = "tom";
+        this.sayHello = function(){
+            console.log("tom 的arr方法");
+        }
+    }
+
+    TomArr.prototype = arr;
+
+    var tArr = new TomArr();
+    tArr.push(22);
+    tArr.push(33);
+    console.log(tArr);
+    // console.log(tArr);
+
+
+</script>
+</html>

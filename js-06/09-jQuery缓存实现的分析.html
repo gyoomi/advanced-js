@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // eleCache
+    // typeCache
+    // ...
+    function createCache() {
+        // 存储缓存数据
+        var cache = {};
+        // 存储key值，以控制缓存大小
+        var index = [];
+
+        return function(key, value) {
+            if (value !== undefined) {
+                cache[key] = value;
+                index.push(key);
+                // 如果超过50，则删除最先缓存数据
+                if (index.length > 50) {
+                    var tempKey = index.shift();
+                    delete cache[tempKey];
+                }
+            }
+            return cache[key];
+        }
+    }
+
+    var eleCache = createCache();
+    eleCache("name", "周杰伦");
+    console.log(eleCache("name"));
+
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    // 条件式函数声明是否被提升取决于浏览器；
+    // 条件式函数声明式不推荐使用的。
+
+    foo();  // TypeError: foo is not a function,这里未被提升
+
+    if (true) {
+        function foo() {
+            console.log("123");
+        }
+    }
+
+    // foo();
+</script>
+</html>

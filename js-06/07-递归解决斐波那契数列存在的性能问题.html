@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var count = 0;
+    function fb(n) {
+        count++;
+        if (n <= 2) {
+            return 1;
+        }
+        return fb(n-1) + fb(n-2);
+    }
+    fb(7);
+    console.log(count);
+
+    // 使用此方法会有性能问题
+</script>
+</html>

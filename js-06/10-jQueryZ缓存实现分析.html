@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function createCache() {
+        var cache = [];
+        function cache(key,value) {
+            // 使用(key + " ") 是为了避免和原生（本地）的原型中的属性冲突
+            if (cache.push(key + " ") > 3) {
+                delete cache[key + " "];
+            }
+            return (cache[key + " "] = value);
+        }
+        return cache;
+    }
+
+</script>
+</html>

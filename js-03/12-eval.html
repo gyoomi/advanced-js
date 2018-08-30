@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // eval函数可以用来将字符串转换成JavaScript代码并且运行
+    var s = "var a = 10;";
+    eval(s);
+    // console.log(a);
+
+    var jsonData = '({"name":"tom1","age":21})';
+    var jsonData2 = {"name":'jack',age:34,sex:1};
+    var o1 = eval(jsonData);
+    var o2 = eval(jsonData2)
+    console.log(o1);
+    console.log(o2);
+
+    // 使用eval来解析JSON格式字符串的时候，会将{}解析为代码块，而不是对象的字面量
+    // 1.在JSON格式的字符串前面拼接上 "var o ="
+    // 2.把JSON格式的字符串使用()括起来，就不会将{}解析为代码块，而是表达式
+
+
+    var str = prompt("请输入内容");
+    eval(str);
+
+    //不推荐使用eval
+</script>
+</html>

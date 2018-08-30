@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>this is first p element!!!</p>
+    <p>this is second p element!!!</p>
+    <p>this is third p element!!!</p>
+</body>
+<script>
+    var G = {
+        query:{
+            getEles:function(elementName){
+                return document.getElementsByTagName(elementName);
+            }
+        },
+        setCss:{
+            setStyle:function(eles){
+                for (var i  = 0; i < eles.length; i++){
+                    eles[i].style.border = "1px solid yellow";
+                }
+            }
+        }
+    }
+
+    G.setCss.setStyle(G.query.getEles("div"));
+    G.setCss.setStyle(G.query.getEles("p"));
+
+    //         //使用对象进行封装后的优势
+    // 1.暴露在全局的只有一个对象名 不会造成全局变量污染
+    // 2.使用对象将代码进行功能模块的划分，有利于日后的维护
+</script>
+</html>

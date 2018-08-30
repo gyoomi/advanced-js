@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1.返回数组
+    function foo() {
+        var name = "张三";
+        var age = 23;
+
+        return [
+            function(a) {
+                if (a !== undefined) {
+                    name = a;
+                    return name;
+                } else {
+                    return name;
+                }
+            },
+            function(b) {
+                if (b != undefined) {
+                    age = b;
+                    return age;
+                } else {
+                    return age;
+                }
+            }
+        ];
+    }
+
+    /*var arr = foo();
+    var n = arr[0]();
+    console.log(n);
+    var a = arr[1]();
+    console.log(a);*/
+
+    // 2.返回一个多个内部函数
+
+    function bar() {
+        var name = "张国荣";
+        var gender = "男性";
+
+        return {
+            getName:function() {
+                return name;
+            },
+            getGender:function() {
+                return gender;
+            }
+        };
+    }
+
+    var $ = bar();
+    console.log($.getName());
+    console.log($.getGender());
+</script>
+</html>

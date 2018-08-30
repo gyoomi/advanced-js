@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function Person(name, gender){
+        this.name = name;
+        this.gender = gender;
+    }
+
+    Person.prototype.sing = function(){
+        console.log(this.name + '是一个' + this.gender + '演员');
+    }
+
+    Person.prototype["sayHello"] = function(){
+        console.log("hi,everyone! I am " + this.name);
+    }
+
+    var p1 = new Person("jay", 'male');
+    var p2 = new Person('eason', 'male');
+    /*p1.sing();
+    p2.sing();*/
+    p1.sayHello();
+    p2.sayHello();
+    console.log(p1);
+    console.log(p2);
+
+    // 如何使用原型来解决构造函数存在的问题？
+    // 构造函数的原型对象中的成员，可以被该构造函数创建出来的所有对象访问
+    // 而且，所有的对象共享该对象
+    // 所以，我们可以将构造函数中需要创建的函数，放到原型对象中存储
+    // 这样就解决 全局变量污染的问题 以及 代码结构混乱的问题
+</script>
+</html>

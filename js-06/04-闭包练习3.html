@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = [
+        {name: '张三1'},
+        {name: '张三2'},
+        {name: '张三3'},
+        {name: '张三4'}
+    ];
+    /*
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].sayHello = function() {
+            console.log(i);
+        }
+    }
+    */
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].sayHello = (function(k){
+            return function() {
+                console.log(k);
+            }
+        }(i));
+    }
+    // console.log(arr);
+    arr[0].sayHello();
+</script>
+</html>

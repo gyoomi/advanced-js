@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1.函数模式
+    //     this指向全局Window对象
+    function test() {
+        console.log(this);
+    }
+
+     // test();
+
+    // 2.方法模式
+    //      this指向调用当前方法的对象
+    var obj = {
+        sayHello:function() {
+            console.log(this);
+        }
+    }
+    obj.sayHello();
+
+
+    // 3.构造函数模式
+    //     this指向new出来的对象
+    function Person() {
+        console.log(this);
+    }
+
+    var p = new Person();
+
+    // 4.上下文模式
+
+
+
+
+</script>
+</html>

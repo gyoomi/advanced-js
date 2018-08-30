@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Student(age){
+        this.age=age;
+    }
+
+    Student.prototype.name="ss";
+
+    var stu1 = new Student(8);
+
+    for(var k in stu1){
+        // console.log(k);
+    }
+    console.log(stu1);
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin: 5px;
+            height: 200px;
+            width: 200px;
+            border:6px dashed pink;
+        }
+        p{
+            display: block;
+            height: 200px;
+            width: 200px;
+            border:6px dashed pink;
+        }
+    </style>
+</head>
+<body>
+
+<div>d1</div>
+<div>d2</div>
+<div>d3</div>
+<p>p1</p>
+<p>p2</p>
+<p>p3</p>
+
+</body>
+<script>
+    //案例：求一个数组中的最大值
+    var arr = [9, 1, 4, 10, 7, 22, 8, 99];
+
+    var max = Math.max.apply(null, arr);
+    console.log(max);
+
+    // apply方法的第二个参数 是一个数组
+    // 在调用的时候，会将数组中的每一个元素拿出来，作为形参，挨个传递给函数
+    // apply和call方法第一个参数传null时，表示为函数调用模式
+    // 也就是this的指向为window
+
+
+    // 案例：将传入的参数用“-”链接
+    function foo() {
+
+        // 伪数组不具有join方法，所以这个时候就要考虑去借用一下数组的join方法
+        // var str = Array.prototype.join.apply(arguments,["-"]);
+        return Array.prototype.join.apply(arguments, ["-"]);
+    }
+
+    console.log(foo("1", "aaaa", 34343, "fffff"));
+
+    window.onload = function() {
+        var divs = document.getElementsByTagName("div");
+        var ps = document.getElementsByTagName("p");
+
+        var arr = [];
+        arr.push.apply(arr, divs);
+        arr.push.apply(arr, ps);
+        console.log(arr);
+       /* var arr2 = [];
+        arr2.push(divs);
+        arr2.push(ps);
+        console.log(arr2);*/
+
+        for (var k = 0; k < arr.length; k++) {
+            var ele = arr[k];
+            ele.style.backgroundColor = "yellow";
+        }
+    }
+
+</script>
+</html>

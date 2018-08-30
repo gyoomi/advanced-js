@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function foo() {
+        var name = "周传雄";
+        var gender = "female";
+
+        return {
+            getName:function() {
+                return name;
+            },
+            setName(value) {
+                name = value;
+                return name;
+            },
+            getGender:function() {
+                return gender;
+            },
+            setGender:function(value) {
+                gender = value;
+                return gender;
+            }
+        };
+    }
+
+    var $ = foo();
+    $.setName("hahahahah ");
+    $.setGender("male");
+    console.log($.getName());
+    console.log($.getGender());
+</script>
+</html>

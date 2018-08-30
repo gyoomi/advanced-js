@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function sumTo(arg0, arg1){
+        if (arg0 == undefined || arg1 == undefined){
+            throw {
+                msg:"参数错误",
+                code:303
+            };
+        } else {
+            return arg0 + arg1;
+        }
+    }
+
+    try {
+        var ss = sumTo(1);
+        console.log(ss);
+    } catch (e) {
+       console.log(e);
+    }
+
+    //异常最大的特征，就是一旦出现异常，后面的代码将不会再执行
+
+    //那为了保证后面代码在出现异常之后，还能继续执行，所以就要进行异常处理
+
+    //注意 语法异常 try catch无法捕获
+
+    //异常捕获语句
+    //try catch finally
+
+    //        a();
+    //
+    //
+
+    //手动抛出异常信息 使用 throw关键字
+</script>
+</html>

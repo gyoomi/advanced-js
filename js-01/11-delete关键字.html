@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // delete 可以用来删除对象的属性，以及未使用var声明的变量
+    // delete关键字有返回值 用来表示删除属性是否成功
+    // 如果删除的是不存在的属性，返回值为true
+    // 如果删除的属性存在原型当中，那么返回值为true，但是并未删除
+
+    var obj = {
+        name:'尼古拉斯@赵四',
+        age:11
+    }
+    console.log(obj.name);
+    delete obj.name;
+    console.log(obj.name);// undefined
+    console.log("------");
+    num = 999;
+    console.log(num);
+    delete num;
+    // console.log(num);
+    console.log("------");
+    var code = 1111;
+    delete code;
+    console.log(code);
+</script>
+</html>

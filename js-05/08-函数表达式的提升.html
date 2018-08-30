@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 函数表达式的提升demo
+    // 规则：函数表达式不会被提升
+    func();  /* TypeError: func is not a function */
+    var func = function() {
+        alert("会不会被调用");
+    }
+</script>
+</html>

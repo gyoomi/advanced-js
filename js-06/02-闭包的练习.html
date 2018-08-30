@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /* 自调用函数使用的4种方式 */
+
+    /*
+    (function foo() {
+        console.log("hello");
+    })();
+
+    (function f2() {
+        console.log("f2");
+    }());
+
+    +function bar() {
+        console.log("bar");
+    }();
+
+    -function f1() {
+        console.log("f1");
+    }();
+    */
+
+
+    /* 闭包的练习 */
+    // 线程：一个线程一次只能处理一件事情，多个线程就可以多个事情同时进行
+    // JS是单线程的！
+    // js中，分了三个任务
+    //   1.渲染任务
+    //   2.js代码执行任务
+    //   3.事件处理任务
+
+
+    // JS代码的执行顺序
+    //   1.先把主任务（代码任务）执行完毕
+    //   2.再去执行吃药任务，（如setTimeout,setInterval）
+
+    // setTimeOut
+    // 至少在指定时间后，执行的函数
+    // 因为要等主线程中的代码执行完毕，才回去检查，setTimeOut的回调函数有没有到执行时间
+
+    // 问题代码
+    /*
+    for (var i = 0; i < 10; i++) {
+        setTimeout(function() {
+            console.log(i);
+        }, 0);
+    }
+    */
+
+    // 解决问题代码方式1
+    /*
+    for (var i = 0; i < 10; i++) {
+        function foo(j) {
+            return function() {
+                console.log(j);
+            };
+        }
+
+        var f = foo(i);
+        setTimeout(f, 0);
+    }
+    */
+
+    // 使用自执行函数进行解决
+    for (var i = 0; i < 10; i++) {
+        setTimeout((function(j) {
+            return function() {
+                console.log(j);
+            }
+        })(i), 0);
+    }
+
+
+
+
+</script>
+</html>

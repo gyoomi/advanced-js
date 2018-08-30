@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 原型继承
+    // 利用原型中的成员可以被和其相关的对象共享这一特性，可以实现继承
+    // 这种实现继承的方式，就叫做原型继承
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.sayHello = function(){
+        console.log("我想死你们了！！");
+    }
+
+    var p = new Person("冯巩", 33);
+    // p.sayHello();
+
+    // 这里的p对象就继承原型
+
+    Person.prototype.sayHi = function(){
+        console.log("Hi Man!!!");
+    }
+
+    // 2.直接替换原型对象
+    var parent = {
+        sayHello : function(){
+            console.log("我想死你们了！！222");
+        }
+    }
+
+    Person.prototype = parent;
+    var p1 = new Person("分工", 55);
+    // console.log(Person.prototype);
+    // p1.sayHello();
+    // p.sayHello();
+
+    // 3.利用混入的方式给原型对象添加成员
+    var parent = {
+        sayHello : function(){
+            console.log("我想死你们了！！333");
+        }
+    }
+
+    for (var k in parent){
+        Person.prototype[k] = parent[k];
+    }
+    var p2 = new Person("分工", 55);
+    // console.log(Person.prototype);
+    p2.sayHello();
+    p1.sayHello();
+    p.sayHello();
+
+</script>
+</html>

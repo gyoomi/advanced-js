@@ -1,0 +1,8 @@
+{
+    "code":200,
+    "list":[
+        {"name":"jack", "age":22, "address":"长安区"},
+        {"name":"tom", "age":11, "address":"碑林区"},
+        {"name":"rose", "age":22, "address":"未央区"}
+    ]
+}

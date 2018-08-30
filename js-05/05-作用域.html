@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 作用域
+    // 作用：起作用
+    // 域：范围
+    // 起作用的范围
+
+    // 变量起作用的范围就是变量的作用域
+
+    // 1.块级作用域
+    // JavaScript中没有块级作用域
+    for (var i = 0; i < 10; i++) {
+        var num = i;
+    }
+    /*console.log(i);
+    console.log(num);*/
+    // 2.词法作用域
+    // 就是代码写好的那一刻，代码的作用域就确定了，这种作用域就是所谓的词法作用域。
+    // 和词法作用域相对的就是动态作用域，js中的此法作用域不是不是动态作用域
+    var a = 123;
+    function f2() {
+        var a = 456;
+        function f1() {
+            console.log(a);
+        }
+        f1();
+    }
+
+    // f2();
+
+    // 3.js中唯一能产生作用域的东西就是函数
+    var a = 1;
+    function test() {
+        var b = 10;
+    }
+
+    console.log(b);
+
+    // 4.此法作用域的规则
+    // *函数可以访问函数外的东西
+    // *整个代码结构中只有函数可以限定作用域
+    // *作用域规则首先使用变量提升进行分析
+    // *如果当前作用域中有同名变量，就不考虑外面同名变量
+
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /* demo01 */
+    function foo() {
+        var num = 123;
+        // console.log(num);
+    }
+    foo();
+    // console.log(num); // ReferenceError: num is not defined
+    // is not defined 是没有定义
+    // undefined 未赋值
+
+
+    /*demo02
+    var scope = "global";
+
+    bar();
+    function bar() {
+        console.log(scope); // undefined
+        var scope = "local";
+        console.log(scope); // local
+    }
+    */
+
+    /*demo03
+    // in 判断属性是否在某个属性里面
+    if ("a" in window) {
+        var a = 10;
+    }
+    alert(a);
+
+    // 代码提升模拟
+    var a;
+    if ("a" in window) {
+        a = 10;
+    }
+    alert(a);
+    */
+    /*
+    var a;
+    if (!"a" in window) {
+        a = 10;
+    }
+    alert(a); //undefined
+    */
+
+    /*
+    function f2() {
+        var a;
+        if ("a" in window) {
+            a = 10;
+        }
+        alert(a);
+    }
+    f2(); // undefined
+    */
+
+    /* demo04*/
+    /*
+    var f3 = 99;
+    function f4() {
+        if (!f3) {
+            var f3 = 100;
+        }
+        alert(f3);
+    }
+    f4(); // 100
+    */
+
+    function Foo() {
+        getName = function(){ alert(1); };
+        return this;
+    }
+    Foo.getName = function() { alert(2); };
+    Foo.prototype.getName = function(){ alert(3); };
+    var getName = function() { alert(4); };
+    function getName(){ alert(5); }
+
+    Foo.getName(); // 2
+    getName(); // 4
+    Foo().getName(); // 1
+    getName(); // 4错了  应该是1
+    new Foo.getName(); // 1  应该是2  等价于 Foo.getName();
+    new Foo().getName(); // 1 应该是3
+    // new new Foo().getName(); 1
+    console.log(Foo());
+</script>
+</html>

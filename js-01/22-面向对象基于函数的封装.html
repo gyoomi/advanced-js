@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>this is first p element!!!</p>
+    <p>this is second p element!!!</p>
+    <p>this is third p element!!!</p>
+</body>
+<script>
+    // 得到元素数组
+    function getEles(elementName){
+        return document.getElementsByTagName(elementName);
+    }
+
+    // 设置边框
+    function setStyle(eles){
+        for (var i  = 0; i < eles.length; i++){
+            eles[i].style.border = "1px solid green";
+        }
+    }
+
+    setStyle(getEles("div"));
+    setStyle(getEles("p"));
+
+    // 使用函数进行封装，使得其复用性得到提高
+    // 函数封装所带来的问题：
+    // 1、全局变量污染
+    // 2、代码结构不清晰，不利于维护
+</script>
+</html>
